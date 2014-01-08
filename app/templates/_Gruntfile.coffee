@@ -8,6 +8,12 @@ module.exports = (grunt) ->
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   ###*
+   Initialize variables
+  ###
+  srcDir = 'src'
+  distDir = 'dist'
+
+  ###*
    Configure
   ###
   grunt.initConfig
@@ -27,9 +33,9 @@ module.exports = (grunt) ->
           {
             expand: true
             flatten: true
-            cwd: "src"
+            cwd: srcDir
             src: ['**/*.{png,jpg,gif}']
-            dest: "dist"
+            dest: distDir
           }
         ]
 
@@ -38,13 +44,13 @@ module.exports = (grunt) ->
         files: [
           {
             expand: true
-            cwd: "src/"
+            cwd: srcDir
             src: ['**/*.html']
           }
         ]
         options:
-          dest: 'dist'
-          root: 'src'
+          dest: distDir
+          root: srcDir
           # flow:
           #   steps:
           #     js: ['concat', 'uglify']
@@ -52,7 +58,7 @@ module.exports = (grunt) ->
           #   post: {}
 
     usemin:
-      html: ['dist/**/*.html']
+      html: ['#{distDir}/**/*.html']
 
     copy:
       compile:
@@ -60,20 +66,20 @@ module.exports = (grunt) ->
           {
             expand: true
             flatten: false
-            cwd: "src"
+            cwd: srcDir
             src: ['**/*.html']
-            dest: "dist"
+            dest: distDir
           }
         ]
 
     clean:
       refresh:
-        src: ["dist"]
+        src: [distDir]
 
   ###*
    Register tasks
   ###
-  grunt.registerTask "build:development", "Build for development", [
+  grunt.registerTask "build", "Build all files", [
     "clean"
     "useminPrepare"
     "copy"
@@ -85,5 +91,5 @@ module.exports = (grunt) ->
   ]
 
   grunt.registerTask "default", "Run default tasks", () ->
-    grunt.task.run 'build:development'
+    grunt.task.run 'build'
 

@@ -1,15 +1,16 @@
 {
   "name": "generator-minimizr",
-  "version": "0.0.0",
-  "description": "A generator for Yeoman",
+  "version": "0.0.1",
+  "description": "This is a small collection of minifiers for JavaScript, StyleSheet, HTML, images.",
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "minify"
   ],
   "homepage": "https://github.com/abdonwww/generator-minimizr",
   "bugs": "https://github.com/abdonwww/generator-minimizr/issues",
   "author": {
-    "name": "",
-    "email": "",
+    "name": "abdonwww",
+    "email": "abdonwww@gmail.com",
     "url": "https://github.com/abdonwww"
   },
   "main": "app/index.js",

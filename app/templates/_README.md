@@ -1,6 +1,6 @@
 # <%= projectName %>
 
-**This is a small collection of minifier taskes that consist of followings:**
+**This is a small collection of minifiers that are comprised of followings:**
 
 - concat
 - uglify
