@@ -4,12 +4,14 @@ node_js:
   - '0.10'
 
 before_install:
-  - npm install -g yo
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-minimizr' ]; then cd .. && eval "mv $currentfolder generator-minimizr" && cd generator-minimizr; fi
+  - npm install -g yo
+  - npm link
 
 script:
-  - npm install -g generator-minimizr
+  - yo minimizr
+  - grunt
 
 notifications:
   emails:
