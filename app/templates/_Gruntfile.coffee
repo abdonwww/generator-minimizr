@@ -58,7 +58,7 @@ module.exports = (grunt) ->
           #   post: {}
 
     usemin:
-      html: ['#{distDir}/**/*.html']
+      html: ["#{distDir}/**/*.html"]
 
     copy:
       compile:
