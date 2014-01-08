@@ -3,16 +3,16 @@ node_js:
   - '0.8'
   - '0.10'
 
-before_install:
-  - npm install -g yo
-  - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-minimizr' ]; then cd .. && eval "mv $currentfolder generator-minimizr" && cd generator-minimizr; fi
+# before_install:
+#   - npm install -g yo
+#   - currentfolder=${PWD##*/}
+#   - if [ "$currentfolder" != 'generator-minimizr' ]; then cd .. && eval "mv $currentfolder generator-minimizr" && cd generator-minimizr; fi
 
-script:
-  - npm install -g generator-minimizr
+# script:
+#   - npm install -g generator-minimizr
 
-notifications:
-  emails:
-    - abdonwww@gmail.com
-  on_success: always # default: change
-  on_failure: always
+# notifications:
+#   emails:
+#     - abdonwww@gmail.com
+#   on_success: always # default: change
+#   on_failure: always
